@@ -33,7 +33,8 @@ var_dump(filter_var('679', FILTER_VALIDATE_INT)); //output: int 679
 //SET RANGE FOR INTEGER
 echo filter_var(289, FILTER_VALIDATE_INT, array("options" => array("min_range" => 100, "max_range" => 1000)));
 //output: 289
-echo filter_var(1200, FILTER_VALIDATE_INT, array("options" => array("min_range" => 100, "max_range" => 1000)));
+$res = filter_var(1200, FILTER_VALIDATE_INT, array("options" => array("min_range" => 100, "max_range" => 1000)));
+var_dump($res);
 //output: false (out of range)
 
 /**
