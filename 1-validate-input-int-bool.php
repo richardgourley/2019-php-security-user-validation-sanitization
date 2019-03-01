@@ -44,7 +44,7 @@ var_dump($res);
 */
 var_dump(filter_var(0, FILTER_VALIDATE_BOOLEAN)); //output: boolean false 
 var_dump(filter_var('on', FILTER_VALIDATE_BOOLEAN)); //output: boolean true
-
+var_dump(filter_var('ON', FILTER_VALIDATE_BOOLEAN)); //output: boolean true (NOTE: NOT case sensitive)
 
 // Use FILTER_REQUIRE_ARRAY to specify an array is being filtered.
 $array_bools = array(0, "yes", "1", NULL);
