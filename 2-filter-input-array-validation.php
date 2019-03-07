@@ -39,6 +39,9 @@ $post4 = filter_input_array(INPUT_POST, $args);
 * FITLERS AND FLAGS
 * You can specify more detailed FLAGS and FILTERS for validating individual array items.
 * You can also set OPTIONS to combine other filters.  See example below.
+*
+* FILTER_NULL_ON FAILURE
+* In this example, the flag 'FILTER_NULL_ON_FAILURE' returns 'null' instead of a boolean. Useful for database work.
 */
 
 
@@ -59,27 +62,19 @@ var_dump($post5);
 // 'file_size' - 30 = bool false. 174 = int 174.
 
 /*
-* FILTER_NULL_ON FAILURE
-* In this example, the flag 'FILTER_NULL_ON_FAILURE' returns 'null' instead of a boolean. Useful for database work.
-*
 * FILTER_REQUIRE_SCALAR
 * Useful if you want to make sure the input is not an array of values.
 */
 
 $args3 = array(
    'name'   => FILTER_REQUIRE_SCALAR,
-   'id_num' => array(
-      'filter' => FILTER_VALIDATE_INT,
-      'flags'  => FILTER_NULL_ON_FAILURE
-    )
 );
 
 $post6 = filter_input_array(INPUT_POST, $args3);
 var_dump($post6);
-// id_num - "Hello" = null, true = null, 26 = int 26
+// name - "Hello" = string 'Hello'. array('a','b','c') = boolean false.
 
 
-?>
 
 
 
