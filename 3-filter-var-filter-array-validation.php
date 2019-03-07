@@ -1,7 +1,8 @@
 <?php
 /**
-* FILTER VAR
-* Examples of checking data is the type that you expect it to be using filter_var
+* FILTER_VAR
+* Always validate data.
+* Check it is the type or format you expect.
 */
 
 $num = "29";
