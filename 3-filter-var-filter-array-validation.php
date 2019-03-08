@@ -104,6 +104,7 @@ $my_urls_validated = filter_var_array($my_urls, FILTER_VALIDATE_URL);
 var_dump($my_urls_validated);
 // 'url1' => boolean false
 // 'url2' => string 'https://www.mysuperwebsite'
+
 //NOTE: USE FILTER FLAGS WITH URLs:
 /*
 * FILTER_FLAG_SCHEME_REQUIRED
