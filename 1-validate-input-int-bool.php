@@ -2,7 +2,7 @@
 /**
 * VALIDATE ANY USER INPUT
 * Check the type entered is the type you expect.
-*
+* Even check select or check boxes. Validate EVERYTHING.
 */
 
 /**
@@ -28,7 +28,7 @@ if(is_bool((bool)$bool2)){ echo "Can be parsed to a boolean"; } // (bool)$var - 
 */
 
 echo filter_var('679', FILTER_VALIDATE_INT); // output: 679 - validates is_numeric, returns as int
-var_dump(filter_var('679', FILTER_VALIDATE_INT)); //output: int 679
+var_dump(filter_var('hello', FILTER_VALIDATE_INT)); //output: bool false
 
 //SET RANGE FOR INTEGER
 echo filter_var(289, FILTER_VALIDATE_INT, array("options" => array("min_range" => 100, "max_range" => 1000)));
