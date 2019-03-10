@@ -31,10 +31,10 @@ $stmt->bindParam(2, $book_title, PDO::PARAM_INT);
 * PREPARED STATEMENTS - SECOND WAY - BIND USING ':'
 */
 
-$query = "SELECT * FROM books WHERE book_title = :book_title OR id_num = :id_num";
+$query = "SELECT * FROM books WHERE book_title = :book_title OR category_id = :category_id";
 $stmt = $conn->prepare($query);
 $stmt->bindValue(':book_title', $book_title, PDO::PARAM_STR);
-$stmt->bindValue(':id_num', $id_num, PDO::PARAM_INT);
+$stmt->bindValue(':category_id', $id_num, PDO::PARAM_INT);
 
 /*
 * EXECUTE STATEMENT AND GET RESULTS
