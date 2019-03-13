@@ -1,4 +1,4 @@
-<?php
+<<?php
 /**
 * FILTER_VAR_SANITIZE
 * Validation is a priority, use sanitization alongside validation in dealing with user input.
@@ -38,4 +38,10 @@ var_dump(filter_var('<h1>10 < 5</h1>', FILTER_SANITIZE_STRING)); // '10 '
 
 var_dump(filter_var(25, FILTER_SANITIZE_NUMBER_INT)); // string '25'
 
+/*
+* FILTER_SANITIZE_EMAIL
+* Only sanitizes the email it doesn't validate if it's a valid email.
+*/
 
+var_dump(filter_var('john@mail.com', FILTER_SANITIZE_EMAIL)); // string 'john@mail.com'
+var_dump(filter_var(189, FILTER_SANITIZE_EMAIL)); // string '189'
