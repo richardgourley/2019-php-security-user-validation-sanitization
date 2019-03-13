@@ -2,11 +2,11 @@
 /*
 * DEPRECATED FUNCTIONS
 * Never use the following functions!  They have been deprecated and are no longer used or considered safe.
-* Use PDO prepared statements for database interraction.
+* The PDO class is the preferred method for interaccting with databases.
 * These are from older versions of PHP. PHP 7 no longer has these functions.
 */
 
-//1. MYSQLI
+//1. MYSQL CLASS
 // MySQL extension, which was deprecated in PHP 5.5.0 and removed entirely in PHP 7.0.0.
 // NEVER USE: mysql_query("INSERT INTO `table` (`column`) VALUES ('$unsafe_variable')");
 
