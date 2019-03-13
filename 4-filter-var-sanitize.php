@@ -17,7 +17,6 @@ function test_string_filters($str){
    var_dump(filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_ENCODE_AMP)); 
 }
 
-//test_string_filters("<script>alert('Hello world'<script>");
 test_string_filters("<script>alert('Hello')<script>"); // all return ''alert(&#39;Hello&#39;)'' except FILTER_FLAG_NO_ENCODE_QUOTES returns 'alert('Hello')'
 test_string_filters("` `"); // only FILTER_FLAG_BACKTICK returns ''
 test_string_filters('&'); // only FILTER_FLAG_ENCODE_AMP returns '&#38;'
