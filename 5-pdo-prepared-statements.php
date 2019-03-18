@@ -1,9 +1,8 @@
 <?php
 /*
 * PREPARED STATEMENTS WITH PDO
-* The majority of developers recommend using PDO instead of MySqli, although MySqli can still be used.
-* Binding parameters to prepared statements is the key to preventing SQL injection attacks:
-* Any parameters you send when using a prepared statement will just be treated as strings
+* Binding parameters to prepared statements is the key to preventing SQL injection attacks!
+* PDO is the newest class. MySqli can be used but PDO allows for connections to various databases - oracle, mariadb etc.
 */
 
 $lh = 'localhost'; //name of localhost 
@@ -12,6 +11,7 @@ $un = 'root'; //username
 $pw = ''; //password
 
 $conn = "";
+
 //try catch block gives devs more specific errors.
 try{
 	$conn = new PDO("mysql:host=" . $lh . ";dbname=" . $db, $un, $pw);
@@ -34,8 +34,7 @@ $stmt->bindParam(1, $book_title, PDO::PARAM_STR);
 $stmt->bindParam(2, $year, PDO::PARAM_INT);
 
 $stmt->execute();
-$results = $stmt->fetchAll(PDO::FETCH_ASSOC); // use fetch() for a single result. Use FETCH_NUMERIC instead of an assoc array.
-var_dump($results);
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC); // use fetch() for single result. 
 
 /*
 * PREPARED STATEMENTS - SECOND WAY - BIND USING ':' AND BINDVALUE()
@@ -45,13 +44,12 @@ $author = "Claire"; $title = "Claire's book 3"; $book_year = 2013; $isbn = "7342
 
 $query2 = "INSERT INTO classics (author, title, year, isbn) VALUES (:author, :title, :year, :isbn)";
 $stmt2 = $conn->prepare($query2);
-$stmt2->bindValue(':author', $author, PDO::PARAM_STR);
-$stmt2->bindValue(':title', $title, PDO::PARAM_STR);
-$stmt2->bindValue(':year', $book_year, PDO::PARAM_INT);
-$stmt2->bindValue(':isbn', $isbn, PDO::PARAM_STR);
+$stmt2->bindParam(':author', $author, PDO::PARAM_STR);
+$stmt2->bindParam(':title', $title, PDO::PARAM_STR);
+$stmt2->bindParam(':year', $book_year, PDO::PARAM_INT);
+$stmt2->bindParam(':isbn', $isbn, PDO::PARAM_STR);
 
-$success = $stmt2->execute();
-var_dump($success); // boolean true
+$success = $stmt2->execute(); // $success = boolean
 
 //CLOSE CONNECTION
 $conn = null;
