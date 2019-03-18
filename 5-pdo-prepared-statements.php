@@ -52,11 +52,8 @@ $stmt2->bindValue(':isbn', $isbn, PDO::PARAM_STR);
 
 $success = $stmt2->execute();
 var_dump($success); // boolean true
-//$results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC); 
 
 //CLOSE CONNECTION
 $conn = null;
 $stmt = null;
 
-//var_dump($results);
-//var_dump($results2);
