@@ -22,7 +22,7 @@ try{
 }
 
 /*
-* PREPARED STATEMENTS - FIRST WAY - BIND USING '?' AND BINDPARAM
+* PREPARED STATEMENTS - FIRST WAY - BIND USING '?' 
 */
 
 $book_title = 'Food from around the world';
@@ -37,7 +37,7 @@ $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC); // use fetch() for single result. 
 
 /*
-* PREPARED STATEMENTS - SECOND WAY - BIND USING ':' AND BINDVALUE()
+* PREPARED STATEMENTS - SECOND WAY - BIND USING ':' 
 */
 
 $author = "Claire"; $title = "Claire's book 3"; $book_year = 2013; $isbn = "734283489";
