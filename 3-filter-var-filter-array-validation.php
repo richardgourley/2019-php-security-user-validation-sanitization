@@ -24,12 +24,12 @@ var_dump($returned_string); // string 'I am a string'
 * You can pass flags as an array as required, if you have multiple flags etc.
 */
 
-$another_number = '0755';
+$octal_number = '0755';
 $options = array(
    'flags' => FILTER_FLAG_ALLOW_OCTAL
 );
-$another_number_validated = filter_var($another_number, FILTER_VALIDATE_INT, $options);
-var_dump($another_number_validated); // int 493
+$octal_number_validated = filter_var($another_number, FILTER_VALIDATE_INT, $options);
+var_dump($octal_number_validated); // int 493
 
 /*
 * PASS OPTIONS - SET A DEFAULT
