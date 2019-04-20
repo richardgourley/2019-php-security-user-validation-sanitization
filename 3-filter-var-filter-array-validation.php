@@ -36,15 +36,15 @@ var_dump($octal_number_validated); // int 493
 * You can set a default to be returned if the validation fails
 */ 
 
-$possible_number = "Steve";
+$var_input = "Steve";
 $more_options = array(
    'options' => array(
       'default'   => 50,
       'min_range' => 3
    )
 );
-$possible_number_checked = filter_var($possible_number, FILTER_VALIDATE_INT, $more_options);
-var_dump($possible_number_checked); // int 50
+$var_input_validated = filter_var($var_input, FILTER_VALIDATE_INT, $more_options);
+var_dump($var_input_validated); // int 50
 
 /*
 * FILTER_CALLBACK
@@ -56,11 +56,7 @@ $checked_username = filter_var($username, FILTER_CALLBACK, array('options' => 'c
 var_dump($checked_username); // boolean false
 
 function check_username($username){
-   if(strlen($username) > 12){
-      return false;
-   }
-
-   if(strpos($username, '!')){
+   if(strlen($username) > 12 || strpos($username, '!')){
       return false;
    }
 
