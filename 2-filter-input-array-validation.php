@@ -6,18 +6,21 @@
 
 $post = filter_input_array(INPUT_POST, FILTER_VALIDATE_INT); 
 var_dump($post);
+//EXAMPLE INPUTS:
 // "Hello world"  = boolean false 
 // 25 = int 25
 
 
 $post2 = filter_input_array(INPUT_POST, FILTER_VALIDATE_FLOAT); 
 var_dump($post2);
+//EXAMPLE INPUTS:
 // 25 = float 25
 // 25.7 = float 25.7
 // true = boolean false
 
 $post3 = filter_input_array(INPUT_POST, FILTER_VALIDATE_EMAIL);
 var_dump($post3);
+//EXAMPLE INPUTS:
 // dave@mail.com = string 'dave@mail.com'
 // dave@mail = boolean false
 
@@ -71,7 +74,9 @@ $args3 = array(
 
 $post6 = filter_input_array(INPUT_POST, $args3);
 var_dump($post6);
-// name - "Hello" = string 'Hello'. array('a','b','c') = boolean false.
+//EXAMPLE INPUTS
+// name - "Hello" = string 'Hello'. 
+// array('a','b','c') = boolean false.
 
 
 
